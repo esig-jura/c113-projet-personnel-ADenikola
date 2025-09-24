@@ -5,8 +5,8 @@
 
 ### Concept
 - Thème choisi : Services
-- Public cible : Petit entrepreneur/ ou humain qui à des compétence
-- Objectifs du site : Promouvoir des gens compétent 
+- Public cible : Petit entrepreneur/ ou humain qui a des compétences
+- Objectifs du site : Promouvoir des talents qui proposent leurs services
 
 ### Fonctionnalités prévues
 - Navigation : …
