@@ -9,9 +9,9 @@
 - Objectifs du site : Promouvoir des talents qui proposent leurs services
 
 ### Fonctionnalités prévues
-- Navigation : …
-- Sections principales : …
-- Contenus proposés : …
+- Navigation : barre de recherche 
+- Sections principales : Service
+- Contenus proposés : aide po
 
 ---
 
