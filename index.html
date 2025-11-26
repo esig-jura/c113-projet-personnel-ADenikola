@@ -1,36 +1,314 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <title>ProConnect</title>
-
-        <!--lien vers mon fichier css-->
-        <link href="style.css" rel="stylesheet">
-
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <title>ProConnect</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <nav>
+        <a href="#decouvrir">Découvrir les talents</a>
+        <a href="#proposer">Proposer un service</a>
+    </nav>
+    <div class="hero">
         <h1>ProConnect</h1>
-        <!-- le premier bouton(onglet -->
-        <h2>Découvrir les talents !</h2>
-        <!-- mettre des images en dessous(ne pas oublier ! -->
-        <h2>Liste de toutes les personnes qui proposent leurs services:</h2>
-        <ol>Nom / photo</ol>
-        <ol>Métier ou talent</ol>
-        <ol>Description courte</ol>
-        <ol>Tarif</ol>
-        <!--pas oublier de le mettre en bouton !-->
-        <ol>Contacter</ol>
-        <!--Page pour que quelqu’un puisse créer son profil et publier son offre!-->
-        <h3>Proposer un service</h3>
-        <ol>Nom / photo</ol>
-        <ol>Compétence / talent</ol>
-        <ol>Description</ol>
-        <ol>Tarif</ol>
-        <ol>Lieu ou en ligne</ol>
-        <ol>Contact (email / téléphone / messagerie interne)</ol>
-    </body>
-</html>
+        <p>La plateforme pour trouver rapidement des pros et talents près de chez vous.</p>
+    </div>
+</header>
 
-<!-- re checker les bases avec l'article SFA sur teams et le formulaire teams
-prendre le temps de bien choisirs 8 métier et rajouter encore 6 case  utilisé unsplash pour
-aller chercher les images légales et compléter le readme-->
+<main>
+    <!-- SECTION LISTE DES SERVICES -->
+    <section id="decouvrir" aria-labelledby="decouvrir-titre">
+        <h2 id="decouvrir-titre">Découvrir les talents</h2>
+        <p>Choisissez un service et contactez directement la personne grâce au formulaire.</p>
+
+        <section class="services-grid">
+            <!-- 1. Déménagement -->
+            <article class="service-card">
+                <figure>
+                    <img src="images/demenagement.png" alt="Équipe de déménageurs portant un canapé et des cartons">
+                    <figcaption>Déménagement</figcaption>
+                </figure>
+                <h3>Équipe de déménagement</h3>
+                <p>Trois déménageurs pour les petits et grands déménagements.</p>
+                <p class="tarif">Tarif&nbsp;: dès 80&nbsp;CHF / heure</p>
+
+                <form class="service-form" action="https://kode.ch/getpost/" method="POST">
+                    <ul>
+                        <li>
+                            <label for="nom-demenagement">Nom</label>
+                            <input type="text" id="nom-demenagement" name="nom" required>
+                        </li>
+                        <li>
+                            <label for="email-demenagement">Email</label>
+                            <input type="email" id="email-demenagement" name="email" required>
+                        </li>
+                        <li>
+                            <label for="message-demenagement">Votre demande</label>
+                            <textarea id="message-demenagement" name="message" rows="3"
+                                      placeholder="Date, lieu, volume à déménager..." required></textarea>
+                        </li>
+                        <li>
+                            <input type="hidden" name="service" value="demenagement">
+                        </li>
+                        <li class="buttons">
+                            <button type="reset">Effacer</button>
+                            <button type="submit">Contacter</button>
+                        </li>
+                    </ul>
+                </form>
+            </article>
+
+            <!-- 2. Électricité -->
+            <article class="service-card">
+                <figure>
+                    <img src="images/electricite.png" alt="Personne sur un escabeau changeant une ampoule">
+                    <figcaption>Électricité</figcaption>
+                </figure>
+                <h3>Électricien·ne à domicile</h3>
+                <p>Installation ou remplacement de luminaires, prises et interrupteurs.</p>
+                <p class="tarif">Tarif&nbsp;: dès 60&nbsp;CHF / heure</p>
+
+                <form class="service-form" action="https://kode.ch/getpost/" method="POST">
+                    <ul>
+                        <li>
+                            <label for="nom-electricite">Nom</label>
+                            <input type="text" id="nom-electricite" name="nom" required>
+                        </li>
+                        <li>
+                            <label for="email-electricite">Email</label>
+                            <input type="email" id="email-electricite" name="email" required>
+                        </li>
+                        <li>
+                            <label for="message-electricite">Votre demande</label>
+                            <textarea id="message-electricite" name="message" rows="3"
+                                      placeholder="Type de travaux, adresse, disponibilité..." required></textarea>
+                        </li>
+                        <li>
+                            <input type="hidden" name="service" value="electricite">
+                        </li>
+                        <li class="buttons">
+                            <button type="reset">Effacer</button>
+                            <button type="submit">Contacter</button>
+                        </li>
+                    </ul>
+                </form>
+            </article>
+
+            <!-- 3. Tonte de gazon -->
+            <article class="service-card">
+                <figure>
+                    <img src="images/gazon.png" alt="Personne tondant une pelouse avec une tondeuse">
+                    <figcaption>Jardinage</figcaption>
+                </figure>
+                <h3>Tonte de gazon</h3>
+                <p>Entretien de la pelouse et petits travaux de jardin.</p>
+                <p class="tarif">Tarif&nbsp;: dès 45&nbsp;CHF / heure</p>
+
+                <form class="service-form" action="https://kode.ch/getpost/" method="POST">
+                    <ul>
+                        <li>
+                            <label for="nom-gazon">Nom</label>
+                            <input type="text" id="nom-gazon" name="nom" required>
+                        </li>
+                        <li>
+                            <label for="email-gazon">Email</label>
+                            <input type="email" id="email-gazon" name="email" required>
+                        </li>
+                        <li>
+                            <label for="message-gazon">Votre demande</label>
+                            <textarea id="message-gazon" name="message" rows="3"
+                                      placeholder="Surface approximative, fréquence souhaitée..." required></textarea>
+                        </li>
+                        <li>
+                            <input type="hidden" name="service" value="gazon">
+                        </li>
+                        <li class="buttons">
+                            <button type="reset">Effacer</button>
+                            <button type="submit">Contacter</button>
+                        </li>
+                    </ul>
+                </form>
+            </article>
+
+            <!-- 4. Nettoyage -->
+            <article class="service-card">
+                <figure>
+                    <img src="images/nettoyage.png" alt="Personne nettoyant une table dans un salon">
+                    <figcaption>Nettoyage</figcaption>
+                </figure>
+                <h3>Nettoyage à domicile</h3>
+                <p>Ménage régulier ou ponctuel, avec produits écologiques sur demande.</p>
+                <p class="tarif">Tarif&nbsp;: dès 35&nbsp;CHF / heure</p>
+
+                <form class="service-form" action="https://kode.ch/getpost/" method="POST">
+                    <ul>
+                        <li>
+                            <label for="nom-nettoyage">Nom</label>
+                            <input type="text" id="nom-nettoyage" name="nom" required>
+                        </li>
+                        <li>
+                            <label for="email-nettoyage">Email</label>
+                            <input type="email" id="email-nettoyage" name="email" required>
+                        </li>
+                        <li>
+                            <label for="message-nettoyage">Votre demande</label>
+                            <textarea id="message-nettoyage" name="message" rows="3"
+                                      placeholder="Taille du logement, date, besoins spécifiques..." required></textarea>
+                        </li>
+                        <li>
+                            <input type="hidden" name="service" value="nettoyage">
+                        </li>
+                        <li class="buttons">
+                            <button type="reset">Effacer</button>
+                            <button type="submit">Contacter</button>
+                        </li>
+                    </ul>
+                </form>
+            </article>
+
+            <!-- 5. Petits travaux / bricolage -->
+            <article class="service-card">
+                <figure>
+                    <img src="images/petit_travaux.png" alt="Personne utilisant une perceuse pour des travaux dans une cuisine">
+                    <figcaption>Petits travaux</figcaption>
+                </figure>
+                <h3>Bricoleur·euse</h3>
+                <p>Montage de meubles, étagères et petites réparations.</p>
+                <p class="tarif">Tarif&nbsp;: dès 55&nbsp;CHF / heure</p>
+
+                <form class="service-form" action="https://kode.ch/getpost/" method="POST">
+                    <ul>
+                        <li>
+                            <label for="nom-bricolage">Nom</label>
+                            <input type="text" id="nom-bricolage" name="nom" required>
+                        </li>
+
+                        <li>
+                            <label for="email-bricolage">Email</label>
+                            <input type="email" id="email-bricolage" name="email" required>
+                        </li>
+
+                        <li>
+                            <label for="message-bricolage">Votre demande</label>
+                            <textarea id="message-bricolage" name="message" rows="3"
+                                      placeholder="Type de montage ou réparation..." required></textarea>
+                        </li>
+                        <li>
+                            <input type="hidden" name="service" value="petits_travaux">
+                        </li>
+                        <li class="buttons">
+                            <button type="reset">Effacer</button>
+                            <button type="submit">Contacter</button>
+                        </li>
+                    </ul>
+                </form>
+            </article>
+
+            <!-- 6. Plomberie -->
+            <article class="service-card">
+                <figure>
+                    <img src="images/plomberie.png" alt="Plombier réparant un tuyau sous un évier">
+                    <figcaption>Plomberie</figcaption>
+                </figure>
+                <h3>Plombier d’urgence</h3>
+                <p>Fuites, robinets qui gouttent et débouchage d’évier ou de WC.</p>
+                <p class="tarif">Tarif&nbsp;: dès 90&nbsp;CHF / heure</p>
+
+                <form class="service-form" action="https://kode.ch/getpost/" method="POST">
+                    <ul>
+                        <li>
+                            <label for="nom-plomberie">Nom</label>
+                            <input type="text" id="nom-plomberie" name="nom" required>
+                        </li>
+                        <li>
+                            <label for="email-plomberie">Email</label>
+                            <input type="email" id="email-plomberie" name="email" required>
+                        </li>
+                        <li>
+                            <label for="message-plomberie">Votre demande</label>
+                            <textarea id="message-plomberie" name="message" rows="3"
+                                      placeholder="Type de problème, urgence, adresse..." required></textarea>
+                        </li>
+                        <li>
+                            <input type="hidden" name="service" value="plomberie">
+                        </li>
+                        <li class="buttons">
+                            <button type="reset">Effacer</button>
+                            <button type="submit">Contacter</button>
+                        </li>
+                    </ul>
+                </form>
+            </article>
+
+        </section>
+    </section>
+
+    <!-- SECTION POUR CREER UN PROFIL -->
+    <section id="proposer" aria-labelledby="proposer-titre">
+        <h2 id="proposer-titre">Proposer un service</h2>
+        <p>Pour publier une offre sur ProConnect, il suffit de remplir le formulaire ci-dessous.</p>
+
+        <form class="profil-form" action="https://kode.ch/getpost/" method="POST">
+            <ul>
+                <li>
+                    <label for="profil-nom">Nom</label>
+                    <input type="text" id="profil-nom" name="nom" required>
+                </li>
+                <li>
+                    <label for="profil-photo">Lien vers la photo</label>
+                    <input type="url" id="profil-photo" name="photo"
+                           placeholder="https://exemple.com/photo.jpg">
+                </li>
+                <li>
+                    <label for="profil-competence">Compétence / talent</label>
+                    <input type="text" id="profil-competence" name="competence" required>
+                </li>
+                <li>
+                    <label for="profil-description">Description</label>
+                    <textarea id="profil-description" name="description" rows="4" required></textarea>
+                </li>
+                <li>
+                    <label for="profil-tarif">Tarif indicatif (CHF)</label>
+                    <input type="number" id="profil-tarif" name="tarif" min="0" step="5">
+                </li>
+                <li>
+                    <label for="profil-lieu">Lieu</label>
+                    <select id="profil-lieu" name="lieu">
+                        <option value="domicile">À domicile</option>
+                        <option value="en-ligne">En ligne</option>
+                        <option value="les-deux">Les deux</option>
+                    </select>
+                </li>
+                <li>
+                    <fieldset>
+                        <legend>Contact</legend>
+                        <input type="radio" id="contact-email" name="contact-type" value="email" checked>
+                        <label for="contact-email">Email</label>
+
+                        <input type="radio" id="contact-tel" name="contact-type" value="telephone">
+                        <label for="contact-tel">Téléphone</label>
+
+                        <input type="radio" id="contact-message" name="contact-type" value="messagerie">
+                        <label for="contact-message">Messagerie interne</label>
+                    </fieldset>
+                </li>
+                <li>
+                    <label for="profil-contact">Adresse email ou téléphone</label>
+                    <input type="text" id="profil-contact" name="coordonnees" required>
+                </li>
+                <li class="buttons">
+                    <button type="reset">Réinitialiser</button>
+                    <button type="submit">Envoyer mon profil</button>
+                </li>
+            </ul>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 ProConnect – Projet HTML/CSS</p>
+</footer>
+</body>
+</html>

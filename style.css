@@ -1,14 +1,27 @@
-/*VARIABLES GLOBALES*/
+/* =========================================
+   VARIABLES GLOBALES
+========================================= */
 :root {
     --color-primaire: #3498db;
     --color-secondaire: #2ecc71;
     --color-fond: #f5f5f5;
     --color-texte: #333;
+    --color-card: #ffffff;
+    --color-border: #dddddd;
+
+    --espacement-xs: 0.5rem;
     --espacement: 1.2rem;
+    --espacement-l: 2rem;
+
     --radius: 10px;
+    --radius-l: 16px;
+
+    --shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
-/* STRUCTURE GLOBALE*/
+/* =========================================
+   BASE
+========================================= */
 body {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
@@ -16,39 +29,235 @@ body {
     color: var(--color-texte);
     background-color: var(--color-fond);
     margin: 0;
-    padding: var(--espacement);
+    padding: 0;
 }
 
-/* TITRES*/
+/* =========================================
+   TITRES
+========================================= */
 h1, h2, h3 {
     text-align: center;
     color: var(--color-primaire);
+    margin-bottom: var(--espacement);
 }
 
 h1 {
     font-size: 2.2rem;
-    margin-bottom: var(--espacement);
+    margin-top: var(--espacement);
 }
 
 h2 {
     font-size: 1.6rem;
-    margin-top: 2rem;
     color: var(--color-secondaire);
 }
 
 h3 {
     font-size: 1.3rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
-/*SECTIONS & LISTES*/
-ol {
-    list-style-type: none;
-    background: white;
-    margin: 0.5rem auto;
-    padding: 1rem;
+/* =========================================
+   HEADER + NAV
+========================================= */
+header {
+    background: var(--color-primaire);
+    padding: var(--espacement);
+    color: white;
+    text-align: center;
+}
+
+nav {
+    margin-bottom: var(--espacement);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    font-weight: 500;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   LAYOUT GLOBAL
+========================================= */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--espacement);
+}
+
+/* =========================================
+   GRILLE DES SERVICES
+========================================= */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espacement);
+    margin-top: var(--espacement);
+}
+
+/* Version tablette */
+@media (min-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Version desktop */
+@media (min-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* =========================================
+   CARTE SERVICE
+========================================= */
+.service-card {
+    background: var(--color-card);
+    border-radius: var(--radius-l);
+    padding: var(--espacement);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--color-border);
+}
+
+.service-card figure {
+    margin: 0;
+    overflow: hidden;
     border-radius: var(--radius);
-    width: 90%;
-    max-width: 600px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service-card img {
+    width: 100%;
+    display: block;
+}
+
+.service-card figcaption {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+    color: var(--color-texte);
+}
+
+.service-card p {
+    margin: 0.5rem 0;
+}
+
+.tarif {
+    font-weight: bold;
+    color: var(--color-secondaire);
+}
+
+/* =========================================
+   FORMULAIRES
+========================================= */
+form ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+form li {
+    margin-bottom: var(--espacement-xs);
+}
+
+label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+/* Inputs */
+input, textarea, select {
+    width: 100%;
+    padding: 0.6rem;
+    font: inherit;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: white;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: 2px solid var(--color-primaire);
+    border-color: transparent;
+}
+
+/* =========================================
+   FIELDSETS
+========================================= */
+fieldset {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: var(--espacement);
+    background: #fff;
+}
+
+legend {
+    padding: 0 0.5rem;
+    font-weight: 600;
+    color: var(--color-primaire);
+}
+
+/* =========================================
+   BOUTONS
+========================================= */
+.buttons {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: var(--espacement-xs);
+}
+
+button {
+    padding: 0.65rem 1.2rem;
+    border: none;
+    border-radius: var(--radius);
+    font: inherit;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button[type="reset"] {
+    background: #ddd;
+    color: #333;
+}
+
+button[type="reset"]:hover {
+    background: #ccc;
+}
+
+button[type="submit"] {
+    background: var(--color-primaire);
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background: #1f79b8;
+}
+
+/* =========================================
+   FORMULAIRE FINAL : PROPOSER UN SERVICE
+========================================= */
+.profil-form {
+    background: white;
+    padding: var(--espacement);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    max-width: 700px;
+    margin: 0 auto;
+    border: 1px solid var(--color-border);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+footer {
+    text-align: center;
+    padding: var(--espacement);
+    color: #555;
+    margin-top: var(--espacement-l);
+    font-size: 0.9rem;
 }
